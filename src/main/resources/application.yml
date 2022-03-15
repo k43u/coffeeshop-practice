@@ -6,4 +6,4 @@ spring:
     password: postgres
 server:
   servlet:
-    context-path: /coffeeshop
+    context-path: /coffeeshop-practice
