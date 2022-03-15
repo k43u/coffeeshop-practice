@@ -74,6 +74,8 @@
                 <div class="form-group">
                   <label for="inputName">名前:</label
                   ><label
+                    th:if="${#fields.hasErrors('name')}"
+                    th:errors="*{name}"
                     class="control-label"
                     style="color: red"
                     for="inputError"
@@ -90,6 +92,8 @@
                 <div class="form-group">
                   <label for="inputEmail">メールアドレス:</label
                   ><label
+                    th:if="${#fields.hasErrors('email')}"
+                    th:errors="*{email}"
                     class="control-label"
                     style="color: red"
                     for="inputError"
@@ -106,6 +110,8 @@
                 <div class="form-group">
                   <label for="inputZipcode">郵便番号:</label>
                   <label
+                    th:if="${#fields.hasErrors('zipcode')}"
+                    th:errors="*{zipcode}"
                     class="control-label"
                     style="color: red"
                     for="inputError"
@@ -123,6 +129,8 @@
                 <div class="form-group">
                   <label for="inputAddress">住所:</label>
                   <label
+                    th:if="${#fields.hasErrors('address')}"
+                    th:errors="*{address}"
                     class="control-label"
                     style="color: red"
                     for="inputError"
@@ -139,6 +147,8 @@
                 <div class="form-group">
                   <label for="inputTel">電話番号:</label>
                   <label
+                    th:if="${#fields.hasErrors('telephone')}"
+                    th:errors="*{telephone}"
                     class="control-label"
                     style="color: red"
                     for="inputError"
@@ -155,6 +165,8 @@
                 <div class="form-group">
                   <label for="inputPassword">パスワード:</label>
                   <label
+                    th:if="${#fields.hasErrors('password')}"
+                    th:errors="*{password}"
                     class="control-label"
                     style="color: red"
                     for="inputError"
@@ -173,6 +185,8 @@
                     >確認用パスワード:</label
                   >
                   <label
+                    th:if="${#fields.hasErrors('confirmPassword')}"
+                    th:errors="*{confirmPassword}"
                     class="control-label"
                     style="color: red"
                     for="inputError"

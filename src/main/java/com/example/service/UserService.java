@@ -40,4 +40,14 @@ public class UserService {
 		return user;
 	}
 	
+	/**
+	 * メールアドレスからユーザー情報を取得
+	 * 
+	 * @param email メールアドレス
+	 * @return ユーザー情報
+	 */
+	public User findByEmail(String email) {
+		return userRepository.findByEmail(email);
+	}
+	
 }

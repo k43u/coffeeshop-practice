@@ -67,7 +67,7 @@
           "
         >
           <div class="well">
-            <form method="post" action="item_list_coffee.html">
+            <form method="post" action="item_list_coffee.html" th:action="@{/login/complete}"  th:object="${loginForm}">
               <fieldset>
                 <legend>ログイン</legend>
                 <label class="control-label" style="color: red" for="inputError"
