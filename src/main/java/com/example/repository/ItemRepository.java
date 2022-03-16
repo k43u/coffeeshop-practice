@@ -37,7 +37,7 @@ public class ItemRepository {
     };
     
     /**
-     * 全件取得
+     * 全件取得(価格の昇順)
      * 
      * @return 商品リスト
      */
@@ -54,4 +54,45 @@ public class ItemRepository {
     	Item item = template.queryForObject(sql, param, ITEM_ROW_MAPPER);
     	return item;
     }
+    
+
+    /**
+     * 全件取得(価格の降順)
+     * 
+     * @return 商品リスト
+     */
+    public List<Item> findAllDesc(){
+        String sql="SELECT id,name,price_m,price_l,image_path,description FROM items ORDER BY  price_m  DESC ;";
+        List<Item> itemList=template.query(sql, ITEM_ROW_MAPPER);
+       
+        return itemList;
+    }
+    
+    /**
+     * 曖昧検索(価格の昇順)
+     * 
+     * @param searchWord
+     * @return 商品リスト
+     */
+    public List<Item> findByLikeName(String searchWord) {
+        String sql="SELECT id,name,price_m,price_l,image_path,description FROM items WHERE name like :name ORDER BY  price_m  ASC ;";
+        SqlParameterSource param=new MapSqlParameterSource().addValue("name", "%"+searchWord+"%");
+        List<Item> itemList=template.query(sql, param, ITEM_ROW_MAPPER);
+        return itemList;
+    }
+    
+    /**
+     * 曖昧検索(価格の降順)
+     * 
+     * @param searchWord
+     * @return 商品リスト
+     */
+    public List<Item> findByLikeNameDesc(String searchWord) {
+        String sql="SELECT id,name,price_m,price_l,image_path,description FROM items WHERE name like :name ORDER BY  price_m  DESC ;";
+        SqlParameterSource param=new MapSqlParameterSource().addValue("name", "%"+searchWord+"%");
+        List<Item> itemList=template.query(sql, param, ITEM_ROW_MAPPER);
+        return itemList;
+    }
+   
+ 
 }

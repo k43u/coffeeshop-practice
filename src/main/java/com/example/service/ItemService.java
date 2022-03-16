@@ -15,12 +15,24 @@ public class ItemService {
 
 	@Autowired
 	private ItemRepository itemRepository;
-	
-	public List<Item> findAll(){
+
+	public List<Item> findAll() {
 		return itemRepository.findAll();
 	}
-	
+
 	public Item load(Integer id) {
 		return itemRepository.load(id);
 	}
+
+	public List<Item> findAllDesc() {
+		return itemRepository.findAllDesc();
+	}
+	
+	public List<Item> findByLikeName(String searchWord){
+        return itemRepository.findByLikeName(searchWord);
+    }
+	
+	public List<Item> findByLikeNameDesc(String searchWord){
+        return itemRepository.findByLikeNameDesc(searchWord);
+    }
 }
