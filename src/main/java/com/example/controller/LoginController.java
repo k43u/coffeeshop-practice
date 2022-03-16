@@ -45,10 +45,12 @@ public class LoginController {
 	@RequestMapping("/complete")
 	public String login(LoginForm form, Model model) {
 		User user = userService.login(form.getEmail(), form.getPassword());
+		
 		if(user == null) {
 			model.addAttribute("errorMessage", "メールアドレス、またはパスワードが間違っています");
 			return toLogin();
 		}
+		session.setAttribute("name", user.getName());
 		return "redirect:/shoppingList";
 	}
 }
