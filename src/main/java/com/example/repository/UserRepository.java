@@ -16,7 +16,7 @@ import com.example.domain.User;
 /**
  * @author kashimamiyu
  * 
- * usersテーブルを操作するリポジトリです。
+ * usersテーブルを操作するリポジトリ
  *
  */
 @Repository

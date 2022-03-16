@@ -51,7 +51,7 @@
               >&nbsp;&nbsp;
               <a href="order_history.html" class="navbar-link">注文履歴</a
               >&nbsp;&nbsp;
-              <a href="login.html" class="navbar-link">ログイン</a>&nbsp;&nbsp;
+              <a href="login.html" class="navbar-link" th:href="@{/login}">ログイン</a>&nbsp;&nbsp;
               <a href="item_list_coffee.html" class="navbar-link">ログアウト</a>
             </p>
           </div>
@@ -133,11 +133,11 @@
                       height="600"
                     /> </a
                   ><br />
-                  <a href="item_detail.html" th:text="${item.name}">じゃがバターベーコン</a><br />
-                   <span class="price">&nbsp;М&nbsp;</span><span th:text="${item.priceM}+'円(税抜)'">&nbsp;М&nbsp;</span
+                  <a href="item_detail.html" th:href="@{/itemDetail?id=}+${item.id}" th:text="${item.name}">商品名</a><br />
+                   <span class="price">&nbsp;М&nbsp;</span><span th:text="${item.priceM}+'円(税抜)'">&nbsp;2,380円(税抜&nbsp;</span
                     ><br />
                   <span class="price">&nbsp;Ｌ</span
-                  >&nbsp;&nbsp;2,380円(税抜)<br />
+                  ><span th:text="${item.priceL}+'円(税抜)'">&nbsp;&nbsp;2,380円(税抜)<br />
                  <div th:if="${status.index % 3==0}">
                 </th></div>
               </tr>

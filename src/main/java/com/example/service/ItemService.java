@@ -19,4 +19,8 @@ public class ItemService {
 	public List<Item> findAll(){
 		return itemRepository.findAll();
 	}
+	
+	public Item load(Integer id) {
+		return itemRepository.load(id);
+	}
 }
