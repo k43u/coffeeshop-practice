@@ -4,9 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import com.example.domain.OrderTopping;
 import com.example.domain.Topping;
 
 @Repository
@@ -28,5 +31,11 @@ public class ToppingRepojitory {
     	String sql="SELECT id,name,price_m,price_l FROM toppings";
     	 List<Topping> toppingList=template.query(sql,TOPPING_ROW_MAPPER);
          return toppingList;
+    }
+    
+    public void insert(OrderTopping orderTopping) {
+    	String sql="INSERT INTO order_toppings(topping_id,order_item_id)VALUES(:toppingId,:orederItemId);";
+        SqlParameterSource param=new MapSqlParameterSource().addValue("toppingId", orderTopping.getToppingId()).addValue("orederItemId", orderTopping.getOrderItemId());
+        template.update(sql,param);
     }
 }

@@ -50,7 +50,13 @@ public class LoginController {
 			model.addAttribute("errorMessage", "メールアドレス、またはパスワードが間違っています");
 			return toLogin();
 		}
+		session.setAttribute("user", user);
 		session.setAttribute("name", user.getName());
+		
+		Integer userId = (Integer) session.getAttribute("userId");
+		Integer preId = (Integer) session.getAttribute("preId");
+		
+		
 		return "redirect:/shoppingList";
 	}
 }
