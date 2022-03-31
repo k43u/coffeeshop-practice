@@ -127,7 +127,7 @@
                         <span>&nbsp;Ｌ</span>&nbsp;&nbsp;300円(税抜)
                       </label>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-12" id="topping">
                       <label class="checkbox-inline" th:each="topping:${toppingList}">
                         <input type="checkbox" name="orderToppings" th:value="${topping.id}"/><span th:text="${topping.name}">dummy</span>
                       </label>
@@ -142,13 +142,7 @@
                   <div class="row">
                     <div class="col-xs-5 col-sm-5">
                       <label for="">数量:</label>
-                      <label
-                        class="control-label"
-                        style="color: red"
-                        for="inputError"
-                        >数量を選択してください</label
-                      >
-                      <select name="quantity" class="form-control">
+                      <select id="quantity" name="quantity" class="form-control">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -195,5 +189,6 @@
     <!-- end container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
+    <script src="js/itemdetail_price.js"></script>
   </body>
 </html>
