@@ -111,6 +111,24 @@ public class Order {
 	public void setOrderItemList(List<OrderItem> orderItemList) {
 		this.orderItemList = orderItemList;
 	}
+	public int getTax() {
+		int tax = 0;
+		for(OrderItem orderItem :orderItemList) {
+			tax+=orderItem.getSubTotal();
+		}
+		tax*=0.1;
+		return tax;
+		}
+	
+	public int getCalcTotalPrice() {
+		int total=0;
+		for(OrderItem orderItem :orderItemList) {
+			total+=orderItem.getSubTotal();
+		}
+		total*=1.1;
+		return total;
+		}
+
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", userId=" + userId + ", status=" + status + ", totalPrice=" + totalPrice
@@ -119,6 +137,7 @@ public class Order {
 				+ destinationAddress + ", destinationTel=" + destinationTel + ", deliveryTime=" + deliveryTime
 				+ ", paymentMethod=" + paymentMethod + ", user=" + user + "]";
 	}
+	
 	
 	
 }

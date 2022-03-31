@@ -25,6 +25,8 @@ public class LoginController {
 	@Autowired
 	private UserService userService;
 	
+	
+	
 	@Autowired
 	private HttpSession session;
 	
@@ -50,11 +52,11 @@ public class LoginController {
 			model.addAttribute("errorMessage", "メールアドレス、またはパスワードが間違っています");
 			return toLogin();
 		}
-		session.setAttribute("user", user);
-		session.setAttribute("name", user.getName());
 		
-		Integer userId = (Integer) session.getAttribute("userId");
-		Integer preId = (Integer) session.getAttribute("preId");
+		session.setAttribute("name", user.getName());
+		session.setAttribute("user", user);
+		
+		
 		
 		
 		return "redirect:/shoppingList";

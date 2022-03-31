@@ -95,6 +95,7 @@ public class ItemDetailController {
 				orderItem.setQuantity(form.getQuantity());
 				char[] c = form.getSize().toCharArray();
 				orderItem.setSize(c[0]);
+				orderItemId = itemDetailService.insertOrderItem(orderItem);
 			}
 			
 		}
