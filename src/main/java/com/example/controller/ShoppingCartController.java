@@ -59,6 +59,8 @@ public class ShoppingCartController {
 		model.addAttribute("totalMap",totalMap);
 		model.addAttribute("tax", order.getTax());
 		model.addAttribute("total",order.getCalcTotalPrice());
+		
+		System.out.println(userId);
 		return "forward:/shoppingCart/url";
 	}
 

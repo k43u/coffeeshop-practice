@@ -39,7 +39,7 @@
 					<input type="hidden" id="js_userId" th:value="${session.userId}" />
 					<p class="navbar-text navbar-right">
 						<th:block th:unless="${session.userId} == null">
-							<span th:text="${session.userName + 'さん こんにちは！'}"
+							<span th:text="${session.name + 'さん こんにちは！'}"
 								style="font-weight: 900;">山田さん</span>&nbsp;&nbsp;
               </th:block>
 						<a href="cart_list.html" th:href="@{/shoppingCart}"
