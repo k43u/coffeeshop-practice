@@ -16,10 +16,10 @@ public class Order {
 	private Integer userId;
 	private Integer status;
 	private Integer totalPrice;
-	private Date orderDate;
+	Timestamp orderDate;
 	private String destinationName;
 	private String destinationEmail;
-	private String destinationZipcide;
+	private String destinationZipcode;
 	private String destinationAddress;
 	private String destinationTel;
 	private Timestamp deliveryTime;
@@ -39,7 +39,7 @@ public class Order {
 	public Integer getTotalPrice() {
 		return totalPrice;
 	}
-	public Date getOrderDate() {
+	public Timestamp getOrderDate() {
 		return orderDate;
 	}
 	public String getDestinationName() {
@@ -48,8 +48,8 @@ public class Order {
 	public String getDestinationEmail() {
 		return destinationEmail;
 	}
-	public String getDestinationZipcide() {
-		return destinationZipcide;
+	public String getDestinationZipcode() {
+		return destinationZipcode;
 	}
 	public String getDestinationAddress() {
 		return destinationAddress;
@@ -81,17 +81,18 @@ public class Order {
 	public void setTotalPrice(Integer totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
+	public void setOrderDate(Timestamp today) {
+		this.orderDate = today;
 	}
+	
 	public void setDestinationName(String destinationName) {
 		this.destinationName = destinationName;
 	}
 	public void setDestinationEmail(String destinationEmail) {
 		this.destinationEmail = destinationEmail;
 	}
-	public void setDestinationZipcide(String destinationZipcide) {
-		this.destinationZipcide = destinationZipcide;
+	public void setDestinationZipcode(String destinationZipcide) {
+		this.destinationZipcode = destinationZipcide;
 	}
 	public void setDestinationAddress(String destinationAddress) {
 		this.destinationAddress = destinationAddress;
@@ -133,7 +134,7 @@ public class Order {
 	public String toString() {
 		return "Order [id=" + id + ", userId=" + userId + ", status=" + status + ", totalPrice=" + totalPrice
 				+ ", orderDate=" + orderDate + ", destinationName=" + destinationName + ", destinationEmail="
-				+ destinationEmail + ", destinationZipcide=" + destinationZipcide + ", destinationAddress="
+				+ destinationEmail + ", destinationZipcide=" + destinationZipcode + ", destinationAddress="
 				+ destinationAddress + ", destinationTel=" + destinationTel + ", deliveryTime=" + deliveryTime
 				+ ", paymentMethod=" + paymentMethod + ", user=" + user + ", orderItemList=" + orderItemList + "]";
 	}

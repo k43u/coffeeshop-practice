@@ -25,5 +25,13 @@ $(function(){
       $("#inputZipcode").val(insertStr(input));
     }
   });
+  
+  $("#destinationZipcode").on('blur',function(){
+    var input = $("#destinationZipcode").val();
+
+    if(input.length >= 3 && input.substr(3,1) !== '-'){
+      $("#destinationZipcode").val(insertStr(input));
+    }
+  });
 }
 )
