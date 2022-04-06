@@ -31,6 +31,7 @@ public class OrderHistoryRepository {
 			if (nowIdNum != beforeIdNum) {
 				Order order = new Order();
 				order.setStatus(rs.getInt("ord_status"));
+				order.setOrderDate(rs.getDate("ord_order_date"));
 				order.setId(rs.getInt("ord_id"));
 				order.setTotalPrice(rs.getInt("ord_total_price"));
 				orderItemList = new ArrayList<OrderItem>();

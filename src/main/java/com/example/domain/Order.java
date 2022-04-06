@@ -1,7 +1,8 @@
 package com.example.domain;
 
-import java.sql.Date;
+
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public class Order {
 	private Integer userId;
 	private Integer status;
 	private Integer totalPrice;
-	Timestamp orderDate;
+	private Date orderDate;
 	private String destinationName;
 	private String destinationEmail;
 	private String destinationZipcode;
@@ -39,7 +40,7 @@ public class Order {
 	public Integer getTotalPrice() {
 		return totalPrice;
 	}
-	public Timestamp getOrderDate() {
+	public Date getOrderDate() {
 		return orderDate;
 	}
 	public String getDestinationName() {
@@ -81,7 +82,7 @@ public class Order {
 	public void setTotalPrice(Integer totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	public void setOrderDate(Timestamp today) {
+	public void setOrderDate(Date today) {
 		this.orderDate = today;
 	}
 	
